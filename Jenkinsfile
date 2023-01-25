@@ -17,7 +17,7 @@ pipeline {
         stage('delopy') {
             steps {
                 echo 'Deploying....'
-		sshagent(['Project'])  {
+		sshagent(['Deploy'])  {
 		sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Jenkins-CI-CD/target/webapp-0.2.war centos@18.234.61.47:/home/centos/apache-tomcat-7.0.94/webapps"
 		 }
             }
